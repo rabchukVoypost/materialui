@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 
 import theme from './common/theme'
 import StoryBook from './components/StoryBook'
+import SignUp from './components/SignUp'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline/>
         <Route path='/story-book' component={StoryBook}/>
-          {/*<Route path='/sigh-up' component={SighUp}/>*/}
+          <Route path='/sign-up' component={SignUp}/>
       </ThemeProvider>
       </Suspense>
   );

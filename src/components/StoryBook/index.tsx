@@ -38,7 +38,6 @@ const StoryBook = () => {
                     defaultValue="Placeholder"
                 />
                 <TextField
-                    error
                     variant="outlined"
                     label="Password (8 characters)"
                     defaultValue="Placeholder"

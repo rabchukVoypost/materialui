@@ -12,7 +12,9 @@ const theme = createMuiTheme({
                 fontFamily: "Roboto",
                 color:"#000000",
                 fontStyle: "normal",
-                marginTop:defaultTheme.spacing(12)
+                marginTop:defaultTheme.spacing(12),
+                whiteSpace: "pre-line",
+
             },
                 h1: {
                     fontWeight: 900,
@@ -22,7 +24,10 @@ const theme = createMuiTheme({
                 h2: {
                     fontWeight: "bold",
                     fontSize: "32px",
-                    lineHeight: "37px"},
+                    lineHeight: "37px",
+                    marginRight:"auto"
+
+                },
                  h3: {
                     fontWeight: 500,
                     fontSize: "28px",
@@ -94,13 +99,12 @@ const theme = createMuiTheme({
             },
         },
         MuiButton: {
+
             root: {
                 width: "57px",
                 height: "19px",
                 lineHeight: "19px",
                 borderRadius: '6px',
-                marginLeft: defaultTheme.spacing(15),
-                marginTop: defaultTheme.spacing(16),
                 textTransform: "none"
             },
             label: {
@@ -108,6 +112,9 @@ const theme = createMuiTheme({
                 fontStyle: "normal",
                 fontSize: "16px",
                 fontWeight: 900,
+                lineHeight: "19px",
+                gridGap:"10px"
+
             },
             contained: {
                 width: "133px", height: "50px",
