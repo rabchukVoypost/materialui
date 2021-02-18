@@ -113,6 +113,7 @@ const theme = createMuiTheme({
                 "fontWeight": 300,
                 fontSize: "14px",
                 lineHeight: "18px",
+                color:"#FF0000",
                 "&$error":{
                     color:"#FF0000",
 

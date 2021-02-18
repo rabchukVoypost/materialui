@@ -43,6 +43,8 @@ const SignUp = () => {
                     <Typography variant="h6">or</Typography>
                     <Divider variant="middle"/>
                 </Box>
+
+
                 <Formik initialValues={{name: "", email: "",password:""}} validationSchema={SignUpSchema}
                         onSubmit={(values, {setSubmitting, resetForm}) => {
                             setSubmitting(true)
@@ -60,24 +62,27 @@ const SignUp = () => {
                           handleSubmit
                       }) => (
                         <Form>
-                            <FormControl>
+                            <FormControl error={!!errors.name && !!touched.name}>
                                 <FormLabel  htmlFor="name">Full Name</FormLabel>
-                                <InputBase  id="name" aria-describedby="name-helper-text" type="text"
-                                           placeholder="Placeholder"></InputBase>
-                                <FormHelperText  id="name-helper-text"></FormHelperText>
+                                <InputBase  id="name" aria-describedby="name-helper-text" type="text" name="name"
+                                           placeholder="Placeholder" onChange={handleChange}
+                                            value={values.name} onBlur={handleBlur}></InputBase>
+                                <FormHelperText  id="name-helper-text">{touched.name && errors.name} </FormHelperText>
                             </FormControl>
-                            <FormControl>
+                            <FormControl error={!!errors.email && !!touched.email}>
                                 <FormLabel  htmlFor="email">Email address</FormLabel>
-                                <InputBase  id="email" aria-describedby="email-helper-text" type="text"
-                                           placeholder="Placeholder"></InputBase>
-                                <FormHelperText  id="email-helper-text"></FormHelperText>
+                                <InputBase  id="email" aria-describedby="email-helper-text" type="text" name="email"
+                                           placeholder="Placeholder" onChange={handleChange}
+                                            value={values.email} onBlur={handleBlur}></InputBase>
+                                <FormHelperText  id="email-helper-text">{touched.email && errors.email}</FormHelperText>
                             </FormControl>
 
-                            <FormControl>
+                            <FormControl error={!!errors.password && !!touched.password}>
                                 <FormLabel htmlFor="password"> <Avatar alt="Remy Sharp" src={shapePng}/> Password (8 characters)</FormLabel>
-                                <InputBase id="password" aria-describedby="password-helper-text" type="password"
-                                           placeholder="Placeholder"></InputBase>
-                                <FormHelperText  id="password-helper-text"></FormHelperText>
+                                <InputBase  id="password" aria-describedby="password-helper-text" type="password" name="password"
+                                           placeholder="Placeholder" onChange={handleChange}
+                                           value={values.password} onBlur={handleBlur}></InputBase>
+                                <FormHelperText  id="password-helper-text">{touched.password && errors.password} </FormHelperText>
                             </FormControl>
 
                         </Form>)}
