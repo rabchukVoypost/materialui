@@ -11,9 +11,8 @@ function App() {
       <Suspense fallback={<p>Loading...</p>}>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-        <Route exact path='/story-book'>
-          <StoryBook/>
-        </Route>
+        <Route path='/story-book' component={StoryBook}/>
+          {/*<Route path='/sigh-up' component={SighUp}/>*/}
       </ThemeProvider>
       </Suspense>
   );
