@@ -5,61 +5,83 @@ const defaultTheme = createMuiTheme({
 })
 
 const theme = createMuiTheme({
-
     overrides: {
+        MuiAvatar:{
+          root:{
+              width: "18px",
+              height: "17.65px",
+              position:"absolute",
+              marginTop:"43px",
+              marginLeft:"510px",
+              zIndex:2
+          }
+        },
+        MuiDivider: {
+            root: {
+                border: "1px solid #E5E5E5",
+                width: "252px",
+                marginTop: defaultTheme.spacing(12),
+            }
+        },
         MuiTypography: {
             root: {
                 fontFamily: "Roboto",
-                color:"#000000",
+                color: "#000000",
                 fontStyle: "normal",
-                marginTop:defaultTheme.spacing(12),
+                marginTop: defaultTheme.spacing(12),
                 whiteSpace: "pre-line",
 
             },
-                h1: {
-                    fontWeight: 900,
-                    fontSize: "36px",
-                    lineHeight: "42px"
-                },
-                h2: {
-                    fontWeight: "bold",
-                    fontSize: "32px",
-                    lineHeight: "37px",
-                    marginRight:"auto"
+            h1: {
+                fontWeight: 900,
+                fontSize: "36px",
+                lineHeight: "42px"
+            },
+            h2: {
+                fontWeight: "bold",
+                fontSize: "32px",
+                lineHeight: "37px",
+                marginRight: "auto"
 
-                },
-                 h3: {
-                    fontWeight: 500,
-                    fontSize: "28px",
-                    lineHeight: "33px"},
-                 h4: {
-                    fontWeight: 500,
-                    fontSize: "24px",
-                    lineHeight: "28px"},
-                h5: {
-                    fontWeight: 500,
-                    fontSize: "18px",
-                    lineHeight: "21px"},
-                h6: {
-                    fontWeight: "bold",
-                    fontSize: "16px",
-                    lineHeight: "19px"},
-                 subtitle1: {
-                    fontWeight: "bold",
-                    fontSize: "14px",
-                    lineHeight: "16px"},
-                subtitle2: {
-                    fontWeight: 300,
-                    fontSize: "14px",
-                    lineHeight: "16px"}
+            },
+            h3: {
+                fontWeight: 500,
+                fontSize: "28px",
+                lineHeight: "33px"
+            },
+            h4: {
+                fontWeight: 500,
+                fontSize: "24px",
+                lineHeight: "28px"
+            },
+            h5: {
+                fontWeight: 500,
+                fontSize: "18px",
+                lineHeight: "21px"
+            },
+            h6: {
+                fontWeight: "bold",
+                fontSize: "16px",
+                lineHeight: "19px"
+            },
+            subtitle1: {
+                fontWeight: "bold",
+                fontSize: "14px",
+                lineHeight: "16px"
+            },
+            subtitle2: {
+                fontWeight: 300,
+                fontSize: "14px",
+                lineHeight: "16px"
+            }
         },
         MuiTextField: {
             root: {margin: defaultTheme.spacing(4)}
         },
         MuiOutlinedInput: {
             root: {
-                '&$notchedOutline':{
-                    display:"none"
+                '&$notchedOutline': {
+                    display: "none"
                 },
                 '&$focused $notchedOutline': {
                     borderWidth: 1,
@@ -68,35 +90,61 @@ const theme = createMuiTheme({
         },
         MuiFormLabel: {
             root: {
+                marginTop:"25px",
+                marginBottom:"10px",
                 fontFamily: "Roboto",
                 fontStyle: "normal",
                 fontWeight: 900,
                 fontSize: "14px",
                 lineHeight: "16px",
+                color:"#000000",
+                "&$focused":{
+                    color:"#6D9B12"
+                },
+                "&$error":{
+                    color:"#FF0000"
+                },
             }
         },
         MuiFormHelperText: {
             root: {
-                "&$Mui-error": {fontWeight: 300},
+                position: "absolute",
+                marginTop:"102px",
+                "fontWeight": 300,
+                fontSize: "14px",
+                lineHeight: "18px",
+                "&$error":{
+                    color:"#FF0000",
+
+                }
             }
         },
         MuiInputBase: {
-            root: {
-                width: "550px",
-                height: "50px",
-            },
             input: {
-                paddingLeft: defaultTheme.spacing(3),
-                paddingTop: defaultTheme.spacing(4),
-                paddingBottom: defaultTheme.spacing(4),
+                paddingLeft: defaultTheme.spacing(6),
+                paddingTop: defaultTheme.spacing(8),
+                paddingBottom: defaultTheme.spacing(8),
+                boxSizing: "border-box",
                 borderRadius: "6px",
                 color: "#B1B1B1",
+                width: "550px",
+                height: "50px",
                 fontFamily: "Roboto",
                 fontStyle: "normal",
                 fontWeight: "normal",
                 fontSize: "14px",
-                backgroundColor: "#EFEFEF"
+                backgroundColor: "#EFEFEF",
             },
+            root:{
+                "&$focused":{
+                    border:"1px solid #6D9B12",
+                    borderRadius:"6px",
+                },
+                "&$error":{
+                    border:"1px solid #FF0000",
+                    borderRadius:"6px"
+                }
+            }
         },
         MuiButton: {
 
@@ -113,7 +161,8 @@ const theme = createMuiTheme({
                 fontSize: "16px",
                 fontWeight: 900,
                 lineHeight: "19px",
-                gridGap:"10px"
+                gridGap: "10px",
+                position:"static"
 
             },
             contained: {

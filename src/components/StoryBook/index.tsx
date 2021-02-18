@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../Button'
 import Box from '../Box'
-import TextField from '../Textfield';
+import TextField from '@material-ui/core/TextField';
 import Typography from "../Typography";
 
 const StoryBook = () => {
@@ -38,6 +38,7 @@ const StoryBook = () => {
                     defaultValue="Placeholder"
                 />
                 <TextField
+                    error
                     variant="outlined"
                     label="Password (8 characters)"
                     defaultValue="Placeholder"
