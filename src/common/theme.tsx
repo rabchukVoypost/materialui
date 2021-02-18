@@ -6,6 +6,13 @@ const defaultTheme = createMuiTheme({
 
 const theme = createMuiTheme({
     overrides: {
+        MuiCssBaseline:{
+          "@global":{
+              a:{
+                  textDecoration:"underline"
+              }
+          }
+        },
         MuiAvatar:{
           root:{
               width: "18px",
@@ -13,7 +20,8 @@ const theme = createMuiTheme({
               position:"absolute",
               marginTop:"43px",
               marginLeft:"510px",
-              zIndex:2
+              zIndex:2,
+              cursor:"pointer"
           }
         },
         MuiDivider: {
@@ -21,6 +29,13 @@ const theme = createMuiTheme({
                 border: "1px solid #E5E5E5",
                 width: "252px",
                 marginTop: defaultTheme.spacing(12),
+            }
+        },
+        MuiIconButton:{
+            root:{
+                width: "28px",
+                height: "28px",
+                borderRadius: "6px"
             }
         },
         MuiTypography: {
@@ -72,7 +87,7 @@ const theme = createMuiTheme({
             subtitle2: {
                 fontWeight: 300,
                 fontSize: "14px",
-                lineHeight: "16px"
+                lineHeight: "18px"
             }
         },
         MuiTextField: {
