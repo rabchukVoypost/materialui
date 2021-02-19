@@ -34,7 +34,7 @@ interface Values {
 }
 
 
-const SignUp: React.FC<{}> = () => {
+const SignUp: React.FC = ():JSX.Element => {
 
     const [passVisibility, setPassVisibility] = useState<boolean>(false)
 
@@ -58,11 +58,10 @@ const SignUp: React.FC<{}> = () => {
 
                 <Formik initialValues={{name: "", email: "", password: "", checkbox: false}}
                         validationSchema={SignUpSchema}
-                        onSubmit={(values: Values, {setSubmitting, resetForm}) => {
+                        onSubmit={(values: Values, {setSubmitting}) => {
                             setSubmitting(true)
                             alert(JSON.stringify(values, null, 2))
                             setSubmitting(false)
-                            resetForm()
                         }}>
                     {({
                           values,
@@ -71,7 +70,8 @@ const SignUp: React.FC<{}> = () => {
                           handleChange,
                           handleBlur,
                           setFieldValue,
-                          handleSubmit
+                          handleSubmit,
+                          isValid
                       }) => (
                         <Form>
                             <TextField
@@ -80,7 +80,6 @@ const SignUp: React.FC<{}> = () => {
                                 name="name"
                                 label="Full Name"
                                 placeholder="Placeholder"
-
                                 value={values.name}
                                 onChange={handleChange}
                                 helperText={touched.name && errors.name}
@@ -135,7 +134,7 @@ const SignUp: React.FC<{}> = () => {
                                 <Typography variant="subtitle2">Creating an account means you're okay with our <a>Terms
                                     of Service</a>, <a>Privacy Policy</a>, and our default <a>Notification Settings</a>.</Typography>
                             </Box>
-                            <Button onClick={() => handleSubmit()} disabled={!errors} type="submit" color="secondary"
+                            <Button onClick={()=>handleSubmit()} disabled={!isValid} type="submit" color="secondary"
                                     variant='contained' size='large'>Sigh up</Button>
                         </Form>)}
                 </Formik>
